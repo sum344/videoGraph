@@ -2,3 +2,4 @@
 
 export(getgraph)
 import(RMySQL)
+import(rjson)

@@ -4,7 +4,7 @@
 #' youtube and facebook
 #'
 #' @param vid a character scalar that contains the vedio id
-#' @return a barchart which containts the statistics on the video
+#' @return a json value
 #' @export
 #' @import RMySQL
 #' @import rjson
@@ -20,4 +20,5 @@ getgraph<-function(vid)
   #vid="0FfG_5JBVBQ"
   graph=as.vector(data[data["v_id"]==vid,])
   dj=toJSON(graph)
+  return(dj)
 }

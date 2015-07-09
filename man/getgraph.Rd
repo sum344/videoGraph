@@ -10,7 +10,7 @@ getgraph(vid)
 \item{vid}{a character scalar that contains the vedio id}
 }
 \value{
-a barchart which containts the statistics on the video
+a json value
 }
 \description{
 for the given video id a graph on likes, dislikes, comments, shares and views on

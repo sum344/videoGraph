@@ -7,4 +7,4 @@ Author: Sowmyasri Muthupandi
 Maintainer: Sowmyasri Muthupandi <msowmya16992@gmail.com>
 Description: Gives descriptive statistics of Youtube video if the video title is given
 License: GPL2.0
-Depends: RMySQL
+Depends: RMySQL, rjson
