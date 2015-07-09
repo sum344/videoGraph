@@ -26,4 +26,5 @@ getgraph<-function(vid)
   png("temp.png")
   barplot(mat, main="stats", col=c("pale green","red", "blue", "orange", "yellow"), legend=c("likes", "dislikes", "views", "shares", "comments"))
   dev.off()
+  print(mat)
 }
