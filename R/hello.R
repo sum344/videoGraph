@@ -7,6 +7,7 @@
 #' @return a barchart which containts the statistics on the video
 #' @export
 #' @import RMySQL
+#' @import rjson
 
 
 getgraph<-function(vid)
@@ -18,13 +19,5 @@ getgraph<-function(vid)
   #dbUnloadDriver(drv)
   #vid="0FfG_5JBVBQ"
   graph=as.vector(data[data["v_id"]==vid,])
-  youtube=as.numeric(c(graph["v_likeCount"], graph["v_dislikeCount"], graph["v_viewCount"], "0",graph["v_commentCount"]))
-  facebook=as.numeric(c(graph["fb_like_count"],"0", "0", graph["fb_share_count"], graph["fb_comment_count"]))
-  mat=cbind(youtube, facebook)
-  rownames(mat)=c("likes", "dislikes", "views", "shares", "comments")
-  mat=mat/1000000
-  png("temp.png")
-  barplot(mat, main="stats", col=c("pale green","red", "blue", "orange", "yellow"), legend=c("likes", "dislikes", "views", "shares", "comments"))
-  dev.off()
-  print(mat)
+  dj=toJSON(graph)
 }
